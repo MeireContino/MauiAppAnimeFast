@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppAnimeFast.Views.ResumoReserva"
+             Title="ResumoReserva"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="juboy.jpeg">
+    
+    <VerticalStackLayout VerticalOptions="Center">
+        <Label 
+            Text="{Binding CamarimSelecionado.Descricao}"
+            FontFamily="RubikMoorocks" 
+            TextColor="MediumVioletRed"
+            FontSize="25"
+            FontAttributes="Bold"
+            HorizontalTextAlignment="Center"/>
+
+        <Frame Margin="30">
+            <HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Adulto: "/>
+                    <Label Text="{Binding QntAdulto}" 
+                           TextColor="DarkBlue" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout>
+                    <Label Text="Crianca" />
+                    <Label Text="{Binding QtdCrianca}" 
+                           TextColor="DarkBlue" />
+                </HorizontalStackLayout>
+            </HorizontalStackLayout>
+        </Frame>
+
+
+        <Frame Margin="30" >
+            <Grid ColumnDefinitions="*,*,*"
+                  RowDefinitions="Auto, Auto">
+                  <Label Grid.Row="0" Grid.Column="0" Text="Data Inicial: " 
+                         TextColor="DarkBlue"/>
+                  <Label Grid.Row="0" Grid.Column="1" Text="Data Final " 
+                         TextColor="DarkBlue"/>
+                  <Label Grid.Row="0" Grid.Column="2" Text="Dias " 
+                         TextColor="DarkBlue"/>
+
+                  <Label Grid.Row="1" Grid.Column="0" 
+                         Text="{Binding datainicial, StringFormat='{}{0:dd/MM/yyyy}'}"
+                         TextColor="{StaticResource Primary}"/>
+                <Label Grid.Row="1" Grid.Column="1" 
+                       Text="{Binding datafinal, StringFormat='{}{0:dd/MM/yyyy}'}"
+                       TextColor="{StaticResource Primary}"/>
+                <Label Grid.Row="1" Grid.Column="2" 
+                       Text="{Binding Estadia}"
+                       TextColor="{StaticResource Primary}"/>
+            </Grid>
+        </Frame>
+
+        <Frame Margin="50">
+            <StackLayout VerticalOptions="Center">
+                <HorizontalStackLayout  HorizontalOptions="Center">
+                    <Label Text="Valor Adulto Individual : "
+                           TextColor="DarkBlue"
+                           FontAttributes="Bold" />
+
+                    <Label Text="{Binding ValorAdultoIndividual, StringFormat='{}{0:c}'}"
+                           TextColor="{StaticResource Primary}" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout  HorizontalOptions="Center">
+                    <Label Text="Valor Por Criança : "
+                           TextColor="DarkBlue"
+                           FontAttributes="Bold" />
+
+                    <Label Text="{Binding ValorCriancaIndividual, StringFormat='{}{0:c}'}"
+                           TextColor="{StaticResource Primary}" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout  HorizontalOptions="Center">
+                    <Label Text="Valor Total : "
+                           TextColor="DarkBlue"
+                           FontAttributes="Bold" />
+
+                    <Label Text="{Binding ValorTotal, StringFormat='{}{0:c}'}"
+                           TextColor="{StaticResource Primary}" />
+                </HorizontalStackLayout>
+
+            </StackLayout>
+        </Frame>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center"
+                     Margin="10" Spacing="30">
+            
+            <Button Text="Voltar"
+                    FontSize="15"
+                    x:Name="button1"
+                    BackgroundColor="{StaticResource Primary}" 
+                    Clicked="button1_Clicked"/>
+
+            <Button Text="Home"
+                    FontSize="15"
+                    x:Name="button2"
+                    BackgroundColor="{StaticResource Primary}" 
+                    Clicked="button2_Clicked"/>
+
+
+
+        </StackLayout>
+
+       
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

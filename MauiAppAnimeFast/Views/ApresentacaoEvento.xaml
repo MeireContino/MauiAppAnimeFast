@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppAnimeFast.Views.ApresentacaoEvento"
+             Title="ApresentacaoEvento"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="anime_fast.jpg">
+
+    <VerticalStackLayout  
+                     Padding="20,45,20,0" 
+                     Spacing="90">
+        <Label 
+            Text="Torneio Anime Fast"
+            FontFamily="LuckiestGuyRegular"
+            FontSize="35"
+            TextColor="White"
+            FontAttributes="Bold">
+            <Label.Shadow>
+                <Shadow Brush="Cyan" Offset="5,5" Radius="25"/>
+            </Label.Shadow>
+        </Label>
+
+        <Label 
+            Text="Festival Anime: Use seu melhor Cosplay!"
+            FontFamily="LuckiestGuyRegular"
+            FontSize="27"
+            TextColor="BlanchedAlmond">
+            
+            <Label.Shadow>
+                <Shadow Brush="DarkBlue"  Offset="5,5" Radius="25"/>
+            </Label.Shadow>
+        </Label>
+
+        <Label 
+            Text="Local: Sala São Paulo                Complexo Cultural Júlio Prestes"
+            FontFamily="LuckiestGuyRegular"
+            FontSize="20"
+            TextColor="White"
+            FontAttributes="Bold">
+            <Label.Shadow>
+                <Shadow Brush="#4B0082" Offset="5,5" Radius="25"/>
+            </Label.Shadow>
+        </Label>
+
+        <Button Text="Garanta Seu Ingresso!" Clicked="Button_Clicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>

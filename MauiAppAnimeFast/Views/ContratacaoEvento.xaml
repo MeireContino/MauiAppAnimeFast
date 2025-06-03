@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppAnimeFast.Views.ContratacaoEvento"
+             Title="ContratacaoEvento"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="juboys.jpeg">
+    
+    <VerticalStackLayout VerticalOptions="Center">
+        <Label 
+            Text="{Binding CamarimSelecionado.Descricao}"
+            FontFamily="RubikMoonrocks"
+            TextColor="DarkBlue"
+            FontSize="30"
+            FontAttributes="Bold"
+            HorizontalTextAlignment="Center"/>
+
+ 
+
+        <Frame Padding="10">
+            <VerticalStackLayout>
+                <Grid RowDefinitions="Auto, Auto"
+                      ColumnDefinitions="*, *, 2*">
+                    
+                    <Label Grid.Row="0" Grid.Column="0"
+                           Text="Adulto  : " TextColor="Red"/>
+
+                    <Label Grid.Row="0" Grid.Column="1"
+                           TextColor="DarkBlue"
+                           Text="{Binding Value}" 
+                           BindingContext="{x:Reference stp_adulto}"/>
+
+                    <Stepper Grid.Row="0" Grid.Column="2"
+                                    x:Name="stp_adulto"
+                                    Minimum="0"
+                                    Maximum="10"
+                                    Increment="1" />
+
+                        <Label Grid.Row="1" Grid.Column="0"
+                           Text="Criança : " TextColor="red"/>
+
+                    <Label Grid.Row="1" Grid.Column="1"
+                           TextColor="Black"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_crianca}"/>
+
+                    <Stepper Grid.Row="1" Grid.Column="2"
+                                    x:Name="stp_crianca"
+                                    Minimum="0"
+                                    Maximum="10"
+                                    Increment="1" />                           
+                </Grid>
+
+                <Label Text="" />
+
+                <Picker x:Name="pckCamarim"
+                        Title="Selecione seu Camarim" 
+                        ItemDisplayBinding="{Binding Descricao}"/>
+
+                <Frame Padding="10"
+                       Margin="10">
+                    <VerticalStackLayout>
+                        <Label Text="Período de Evento" />
+                        
+                        <HorizontalStackLayout>
+                            <Label Text="Data Inicial: " />
+                            <DatePicker x:Name="dtpck_datainicial"
+                                        DateSelected="dtpck_datainicial_DateSelected"
+                                        Format="dd/MM/yyyy" />
+                        </HorizontalStackLayout>
+                        
+                        <HorizontalStackLayout>
+                            <Label Text="Data Final: " />
+                            <DatePicker x:Name="dtpck_datafinal"
+                                       Format="dd/MM/yyyy" />
+                        </HorizontalStackLayout>
+                        
+                    </VerticalStackLayout>
+ 
+                    
+                </Frame>
+
+            </VerticalStackLayout>
+            
+        </Frame>
+
+
+        
+
+
+
+        <Button Text="Avançar" Clicked="Button_Clicked" HorizontalOptions="Center"/>
+
+    </VerticalStackLayout>
+</ContentPage>
