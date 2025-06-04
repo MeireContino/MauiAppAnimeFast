@@ -13,64 +13,69 @@
             TextColor="MediumVioletRed"
             FontSize="25"
             FontAttributes="Bold"
-            HorizontalTextAlignment="Center"/>
+            HorizontalTextAlignment="Center"
+            BackgroundColor="Lavender"/>
 
-        <Frame Margin="30">
-            <HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text="Adulto: "/>
-                    <Label Text="{Binding QntAdulto}" 
-                           TextColor="DarkBlue" />
-                </HorizontalStackLayout>
+        <Frame Margin="20">
+            <Grid ColumnDefinitions="*, *, *"
+                  RowDefinitions="Auto, Auto">
+                  
+                <Label Grid.Row="0" Grid.Column="0" Text="Adultos: " 
+                       TextColor="DarkBlue" HorizontalOptions="Center"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="Crianças: "
+                       TextColor="DarkBlue" HorizontalOptions="Center"/>
+                <Label Grid.Row="0" Grid.Column="2" Text="Participantes: "
+                       TextColor="DarkBlue" HorizontalOptions="Center"/>
 
-                <HorizontalStackLayout>
-                    <Label Text="Crianca" />
-                    <Label Text="{Binding QtdCrianca}" 
-                           TextColor="DarkBlue" />
-                </HorizontalStackLayout>
-            </HorizontalStackLayout>
+                <Label Grid.Row="1" Grid.Column="0" Text="{Binding QntAdulto}"
+                       TextColor="{StaticResource Primary}" HorizontalOptions="Center"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding QntCrianca}"
+                       TextColor="{StaticResource Primary}" HorizontalOptions="Center"/>
+                <Label Grid.Row="1" Grid.Column="2" Text="{Binding NumeroParticipantes}"
+                       TextColor="{StaticResource Primary}" HorizontalOptions="Center"/>
+            </Grid>
         </Frame>
 
 
-        <Frame Margin="30" >
+        <Frame Margin="20" >
             <Grid ColumnDefinitions="*,*,*"
                   RowDefinitions="Auto, Auto">
                   <Label Grid.Row="0" Grid.Column="0" Text="Data Inicial: " 
-                         TextColor="DarkBlue"/>
+                         TextColor="DarkBlue" HorizontalOptions="Center"/>
                   <Label Grid.Row="0" Grid.Column="1" Text="Data Final " 
-                         TextColor="DarkBlue"/>
+                         TextColor="DarkBlue" HorizontalOptions="Center"/>
                   <Label Grid.Row="0" Grid.Column="2" Text="Dias " 
-                         TextColor="DarkBlue"/>
+                         TextColor="DarkBlue" HorizontalOptions="Center"/>
 
                   <Label Grid.Row="1" Grid.Column="0" 
-                         Text="{Binding datainicial, StringFormat='{}{0:dd/MM/yyyy}'}"
-                         TextColor="{StaticResource Primary}"/>
+                         Text="{Binding Datainicial, StringFormat='{}{0:dd/MM/yyyy}'}"
+                         TextColor="{StaticResource Primary}" HorizontalOptions="Center"/>
                 <Label Grid.Row="1" Grid.Column="1" 
-                       Text="{Binding datafinal, StringFormat='{}{0:dd/MM/yyyy}'}"
-                       TextColor="{StaticResource Primary}"/>
+                       Text="{Binding Datafinal, StringFormat='{}{0:dd/MM/yyyy}'}"
+                       TextColor="{StaticResource Primary}" HorizontalOptions="Center"/>
                 <Label Grid.Row="1" Grid.Column="2" 
                        Text="{Binding Estadia}"
-                       TextColor="{StaticResource Primary}"/>
+                       TextColor="{StaticResource Primary}" HorizontalOptions="Center"/>
             </Grid>
         </Frame>
 
         <Frame Margin="50">
             <StackLayout VerticalOptions="Center">
                 <HorizontalStackLayout  HorizontalOptions="Center">
-                    <Label Text="Valor Adulto Individual : "
+                    <Label Text="Custo Por Adulto: "
                            TextColor="DarkBlue"
                            FontAttributes="Bold" />
 
-                    <Label Text="{Binding ValorAdultoIndividual, StringFormat='{}{0:c}'}"
+                    <Label Text="{Binding CustoIndividualAdulto, StringFormat='{}{0:c}'}"
                            TextColor="{StaticResource Primary}" />
                 </HorizontalStackLayout>
 
                 <HorizontalStackLayout  HorizontalOptions="Center">
-                    <Label Text="Valor Por Criança : "
+                    <Label Text="Custo Por Criança : "
                            TextColor="DarkBlue"
                            FontAttributes="Bold" />
 
-                    <Label Text="{Binding ValorCriancaIndividual, StringFormat='{}{0:c}'}"
+                    <Label Text="{Binding CustoIndividualCrianca, StringFormat='{}{0:c}'}"
                            TextColor="{StaticResource Primary}" />
                 </HorizontalStackLayout>
 

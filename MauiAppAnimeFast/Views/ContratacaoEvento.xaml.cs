@@ -17,11 +17,17 @@ public partial class ContratacaoEvento : ContentPage
 		dtpck_datainicial.MinimumDate = DateTime.Now;
         dtpck_datainicial.MaximumDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month + 1, DateTime.Now.Day);
 
-		dtpck_datafinal.MinimumDate = dtpck_datainicial.Date.AddDays(0);
+		dtpck_datafinal.MinimumDate = dtpck_datainicial.Date.AddDays(1);
 		dtpck_datafinal.MaximumDate = dtpck_datainicial.Date.AddDays(5);
 
+		AtualizarNumeroParticipantes();
+		
 	}
-
+	private void AtualizarNumeroParticipantes() 
+	{
+		int total = Convert.ToInt32(stp_adulto.Value) + Convert.ToInt32(stp_crianca.Value);
+        lbl_numero_participantes.Text = $"Número de Participantes: {total}";
+    }
     private async void Button_Clicked(object sender, EventArgs e)
     {
 		try
@@ -54,5 +60,16 @@ public partial class ContratacaoEvento : ContentPage
 
 		dtpck_datafinal.MinimumDate = data_selecionada_datainicial.AddDays(1);
 		dtpck_datafinal.MaximumDate = data_selecionada_datainicial.AddDays(5);
+    }
+
+    private void stp_crianca_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+		AtualizarNumeroParticipantes();
+
+    }
+
+    private void stp_adulto_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+		AtualizarNumeroParticipantes();
     }
 }

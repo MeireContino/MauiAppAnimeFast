@@ -17,16 +17,19 @@
 
  
 
-        <Frame Padding="10">
-            <VerticalStackLayout>
+        <Frame Padding="5">
+            <VerticalStackLayout Spacing="5"
+                                 BackgroundColor="#afeeee">
                 <Grid RowDefinitions="Auto, Auto"
                       ColumnDefinitions="*, *, 2*">
                     
                     <Label Grid.Row="0" Grid.Column="0"
-                           Text="Adulto  : " TextColor="Red"/>
+                           Text="Adulto  : " 
+                           TextColor="Black"
+                           FontAttributes="Bold"/>
 
                     <Label Grid.Row="0" Grid.Column="1"
-                           TextColor="DarkBlue"
+                           TextColor="Red"
                            Text="{Binding Value}" 
                            BindingContext="{x:Reference stp_adulto}"/>
 
@@ -34,13 +37,16 @@
                                     x:Name="stp_adulto"
                                     Minimum="0"
                                     Maximum="10"
-                                    Increment="1" />
+                                    Increment="1" 
+                                    ValueChanged="stp_adulto_ValueChanged"/>
 
-                        <Label Grid.Row="1" Grid.Column="0"
-                           Text="Criança : " TextColor="red"/>
+                    <Label Grid.Row="1" Grid.Column="0"
+                           Text="Criança : " 
+                           TextColor="Black"
+                           FontAttributes="Bold"/>
 
                     <Label Grid.Row="1" Grid.Column="1"
-                           TextColor="Black"
+                           TextColor="Red"
                            Text="{Binding Value}"
                            BindingContext="{x:Reference stp_crianca}"/>
 
@@ -48,31 +54,60 @@
                                     x:Name="stp_crianca"
                                     Minimum="0"
                                     Maximum="10"
-                                    Increment="1" />                           
+                                    Increment="1" 
+                                    ValueChanged="stp_crianca_ValueChanged"/>                           
                 </Grid>
+                
 
-                <Label Text="" />
+                <Label x:Name="lbl_numero_participantes"
+                       Text="Número de Participantes"
+                       FontAttributes="Bold"
+                       FontSize="18"
+                       TextColor="DarkBlue"
+                       HorizontalOptions="Center" />
 
-                <Picker x:Name="pckCamarim"
+                <Frame Padding="10" Margin="10"
+                       BackgroundColor="Linen">
+                    <VerticalStackLayout>
+
+                        <Label Text="Escolha Seu Pacote"
+                               FontAttributes="Bold"
+                               FontSize="16" 
+                               TextColor="DarkBlue"
+                               HorizontalOptions="Center"/>
+
+                        <Picker x:Name="pckCamarim"
                         Title="Selecione seu Camarim" 
-                        ItemDisplayBinding="{Binding Descricao}"/>
+                        ItemDisplayBinding="{Binding Descricao}"
+                        TextColor="Red"/>
+                    </VerticalStackLayout>
+                </Frame>
 
                 <Frame Padding="10"
-                       Margin="10">
+                       Margin="10"
+                       BackgroundColor="Linen">
                     <VerticalStackLayout>
-                        <Label Text="Período de Evento" />
+                        <Label Text="Período de Evento" 
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               TextColor="DarkBlue"
+                               HorizontalOptions="Center"/>
                         
                         <HorizontalStackLayout>
-                            <Label Text="Data Inicial: " />
+                            <Label Text="Data Inicial: " 
+                                   FontAttributes="Bold"/>
                             <DatePicker x:Name="dtpck_datainicial"
                                         DateSelected="dtpck_datainicial_DateSelected"
-                                        Format="dd/MM/yyyy" />
+                                        Format="dd/MM/yyyy" 
+                                        TextColor="Red"/>
                         </HorizontalStackLayout>
                         
                         <HorizontalStackLayout>
-                            <Label Text="Data Final: " />
+                            <Label Text="Data Final: " 
+                                   FontAttributes="Bold"/>
                             <DatePicker x:Name="dtpck_datafinal"
-                                       Format="dd/MM/yyyy" />
+                                       Format="dd/MM/yyyy" 
+                                        TextColor="Red"/>
                         </HorizontalStackLayout>
                         
                     </VerticalStackLayout>

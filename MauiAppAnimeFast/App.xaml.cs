@@ -9,21 +9,27 @@ namespace MauiAppAnimeFast
         {
             new Camarim() 
             {
-                Descricao = "Vip Básico",
-                ValorDiariaAdulto = 50.0,
-                ValorDiariaCrianca = 45.0
+                Descricao = "Camarote Básico - OTAKU LOUNGE",
+                ValorDiariaAdulto = 150.0,
+                ValorDiariaCrianca = 145.0
             },
             new Camarim() 
             {
-                Descricao = "Premium",
-                ValorDiariaAdulto = 70.0,
-                ValorDiariaCrianca = 65.0
+                Descricao = "Premium - CYBER PUNK ANIME",
+                ValorDiariaAdulto = 600.0,
+                ValorDiariaCrianca = 500.0
             },
             new Camarim()
             {
-                Descricao = "Vip/Camarote",
-                ValorDiariaAdulto = 120.0,
-                ValorDiariaCrianca = 110.0
+                Descricao = "Camarote Vip - SAMURAI NINJA ",
+                ValorDiariaAdulto = 1120.0,
+                ValorDiariaCrianca = 1110.0
+            },
+            new Camarim()
+            {
+                Descricao = "Camarote Diamond - MECHA E SCI-FI",
+                ValorDiariaAdulto = 2000.0,
+                ValorDiariaCrianca = 1500.0
             }
 
         };

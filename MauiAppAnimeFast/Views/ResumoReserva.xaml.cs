@@ -1,3 +1,5 @@
+using MauiAppAnimeFast.Models;
+
 namespace MauiAppAnimeFast.Views;
 
 public partial class ResumoReserva : ContentPage
@@ -30,6 +32,14 @@ public partial class ResumoReserva : ContentPage
         catch (Exception ex) 
         {
             DisplayAlert("Ops", ex.Message, "OK");
+        }
+        if (BindingContext is Evento evento && evento.CamarimSelecionado != null)
+        {
+            // Tudo certo, pode prosseguir
+        }
+        else 
+        {
+            await DisplayAlert("Erro", "Camarim não foi selecionado corretamente", "OK");
         }
     }
 }
